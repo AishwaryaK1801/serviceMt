@@ -1,0 +1,73 @@
+<form #stdForm="ngForm">
+  <div class="form-group">
+    <label for="fname"
+      >first name <sup class="text-danger"><strong>*</strong></sup></label
+    >
+    <input
+      class="form-control"
+      required
+      minlength="3"
+      maxlength="10"
+      #fname="ngModel"
+      type="text"
+      ngModel
+      name="fname"
+      id="fname"
+    />
+
+    <span
+      class="alert alert-danger text-danger"
+      *ngIf="fname.touched && fname.hasError('required')"
+      >First Name is Manfatory Field</span
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="lname"
+      >last name <sup class="text-danger"><strong>*</strong></sup></label
+    >
+    <input
+      class="form-control"
+      required
+      #lname="ngModel"
+      type="text"
+      pattern="[a-zA-Z]+"
+      ngModel
+      name="lname"
+      id="lname"
+    />
+  </div>
+  <div class="form-group">
+    <label for="email">
+      email <sup class="text-danger"><strong>*</strong></sup></label
+    >
+    <input
+      class="form-control"
+      required
+      #email="ngModel"
+      type="text"
+      ngModel
+      name="email"
+      id="email"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="contact"
+      >contact<sup class="text-danger"><strong>*</strong></sup></label
+    >
+    <input
+      class="form-control"
+      required
+      #contact="ngModel"
+      type="text"
+      ngModel
+      name="contact"
+      id="contact"
+    />
+  </div>
+
+  <button (click)="onStdAdd()" mat-raised-button color="primary">
+    Add Student
+  </button>
+</form>

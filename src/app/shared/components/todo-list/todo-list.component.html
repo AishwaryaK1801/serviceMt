@@ -1,0 +1,28 @@
+<ul class="list-group" *ngIf="todoArr ; else noTodo">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todoArr">
+        <span>{{todo.todoItem}}
+        </span>
+        <span>
+            <button
+        mat-mini-fab
+        color="primary"
+        aria-label="Example icon button with a menu icon"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button (click)="onDeleteClick(todo)" class="ml-2"
+        mat-mini-fab
+        color="warn"
+        aria-label="Example icon button with a menu icon"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+        </span>
+    </li>
+</ul>
+
+<ng-template #noTodo>
+    <p class="alert alert-danger"> 
+        No todo Items Added yet !!
+    </p>
+</ng-template>

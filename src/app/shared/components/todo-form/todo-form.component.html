@@ -1,0 +1,9 @@
+<form #todoForm="ngForm">
+    <div class="form-group">
+        <label for="todoItem">todo Item</label>
+        <input class="form-control" #todoItem ="ngModel" ngModel type="text" name="todoItem" id="todoItem">
+    </div>
+    
+    <button (click)="onTodoAdd()" class="btn btn-block btn-sm" mat-raised-button color="primary">Add Todo</button>
+
+</form>
