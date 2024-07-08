@@ -24,7 +24,7 @@ export class TodoFormComponent implements OnInit {
       let todo = this.todoForm.value
       this.todoForm.reset()
       this._todoService.addTodoItem({...todo, id:this._uuidService.uuid()})
-      this._snackBarService.openSnackBAr('todo Items Added successfully !!!')
+      this._snackBarService.openSnackBAr(`todo Item ${{todo}} Added successfully !!!`)
     }  }
 
 
